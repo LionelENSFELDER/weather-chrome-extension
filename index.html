@@ -12,18 +12,20 @@
         
         <section class="">
             <div class="container">
-                <div class="d-flex justify-content-center">
-                    <div class="my-5">
-                        <input id="location" type="text" placeholder="Enter a location in English please" onfocus="this.value=''"/>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="my-5 mx-auto" style="max-width: 500px;">
+                            <input class="w-100 form-control form-control-lg" id="location" type="text" placeholder="Enter a location in English please" onfocus="this.value=''"/>
+                        </div>
                     </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div id="weather-card" class="card bg-transparent text-white d-none">
-                        <div class="card-body">
-                            <i id="icon"></i>
-                            <span id="temp" class="display-2"></span>
-                            <div class="">
-                                <span id="name" class="display-1 font-weight-bold"></span>, <span id="country" class="display-1"></span>
+                    <div class="col-12">
+                        <div id="weather-card" class="card border-0 bg-transparent text-white d-none mx-auto" style="max-width: 500px;">
+                            <div class="card-body">
+                                <i id="icon"></i>
+                                <span id="temp" class="display-2"></span>
+                                <div class="row">
+                                    <span id="name" class="display-3 font-weight-bold">,</span> <span id="country" class="display-3"></span>
+                                </div>
                             </div>
                         </div>
                     </div>

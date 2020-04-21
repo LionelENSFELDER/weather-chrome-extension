@@ -11,7 +11,7 @@ function getWeather(inputValue){
 
     let data = null;
     let city = inputValue;
-    let url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=f61845cc2a438aef2ac2289b15f69307";
+    let url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=f61845cc2a438aef2ac2289b15f69307";
     let xhr = new XMLHttpRequest();
 
     xhr.withCredentials = false;
@@ -39,7 +39,7 @@ function getLocation() {
 
 function hydrateWeatherCard(weatherObj){
     document.getElementById("weather-card").classList.remove("d-none");
-    name = weatherObj.name;
+    name = weatherObj.name + ", ";
     country = weatherObj.sys.country;
     temp = weatherObj.main.temp + "°";
     document.getElementById("temp").textContent = temp;
@@ -56,9 +56,6 @@ function setIcon(weatherObj){
     let iconClass = "";
     let icon = document.getElementById('icon');
     icon.className = "";
-
-    // const regex = /[A-Z]/g;
-    // const found = paragraph.match(regex);
 
     switch(conditions){
         case 'Clear':
