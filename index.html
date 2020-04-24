@@ -14,6 +14,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+                        <button id="refresh" onclick="getLocation();">refresh</button>
                         <div class="my-5 mx-auto" style="max-width: 500px;">
                             <input class="w-100 form-control form-control-lg" id="location" type="text" placeholder="Enter a location in English please" onfocus="this.value=''"/>
                         </div>
@@ -21,7 +22,7 @@
                     <div class="col-12">
                         <div id="weather-card" class="card border-0 bg-transparent text-white d-none mx-auto" style="max-width: 500px;">
                             <div class="card-body">
-                                <i id="icon"></i>
+                                <i id="icon" class="mr-5 display-1 wi"></i>
                                 <span id="temp" class="display-2"></span>
                                 <div class="row">
                                     <span id="name" class="display-3 font-weight-bold">,</span> <span id="country" class="display-3"></span>
