@@ -36,35 +36,37 @@ function hydrateWeatherCard(data){
 
 function setIcon(data){
     let conditions = data.weather[0].main;
-    let icon = document.getElementById('icon');
-
-    let margin = "mr-5";
-    let icoDisplay = "display-1"
-    let iconFamily = "wi"
+    const icon = document.getElementById('icon');
+    let classes = icon.classList;
     let iconClass = "";
-    
 
-    switch(conditions){
-        case 'Clear':
-            iconClass = 'wi-day-sunny';
-            break;
-        case 'Clouds':
-            iconClass = 'wi-cloud';
-            break;
-        case 'Rain':
-            iconClass = 'wi-rain';
-            break; 
-        case 'Snow':
-            iconClass = 'wi-snowflake-cold';
-            break; 
-        case 'Thunderstorm':
-            iconClass = 'wi-lightning';
-            break; 
-        case 'Mist':
-            iconClass = 'wi-fog';
-            break; 
+    //Regex pattern to match when itérate on icon.classList Object
+    var pattern1 = new RegExp("wi-[a-z]*");
+    var pattern2 = new RegExp("wi-[a-z]*-[a-z]*");
+    
+    for(let value of classes){
+        var result1 = pattern1.test(value);
+        var result2 = pattern2.test(value);
+        
+        if(result1 === true || result2 === true){
+            icon.classList.remove(value);
+        }
+    }
+    
+    const conditionsArray = {
+        'Clear': 'wi-day-sunny',
+        'Clouds': 'wi-cloud',
+        'Rain': 'wi-rain',
+        'Snow': 'wi-snowflake-cold',
+        'Thunderstorm': 'wi-lightning',
+        'Mist': 'wi-fog'
     }
 
-    icon.classList.add(margin, icoDisplay, iconFamily, iconClass);
+    for(let key in conditionsArray){
+        if(key == conditions){
+            iconClass = conditionsArray[key];
+            icon.classList.add(iconClass);
+        }
+    }
 }
 
