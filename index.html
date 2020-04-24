@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
         <link href="src/css/weather-icons.css" rel="stylesheet">
         <link href="src/css/main.css" rel="stylesheet">
         <title>Miiniimaal Weather</title>
@@ -14,9 +15,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <button id="refresh" onclick="getLocation();">refresh</button>
-                        <div class="my-5 mx-auto" style="max-width: 500px;">
-                            <input class="w-100 form-control form-control-lg" id="location" type="text" placeholder="Enter a location in English please" onfocus="this.value=''"/>
+                        <div class="my-5 mx-auto input-group mb-3" style="max-width: 500px;">
+                            <div class="input-group-prepend">
+                                <button id="refresh" class="form-control form-control-lg" onclick="getLocation();"><i class="fas fa-sync-alt"></i></button>
+                            </div>
+                            <input class="w-100 form-control form-control-lg" id="location" type="text" placeholder="Enter a location in English please"/>
                         </div>
                     </div>
                     <div class="col-12">

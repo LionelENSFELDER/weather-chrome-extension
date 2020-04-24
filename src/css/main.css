@@ -28,7 +28,15 @@ bg-translucent{
 		background-position: 0% 50%;
 	}
 }
-input{
+input, button{
     background: rgba(255, 255, 255, 0.452) !important;
     border: 0px solid transparent !important;
+}
+input{
+	color: white !important;
+	font-weight: bold !important;
+}
+input:focus, button:focus{
+    background: rgba(184, 72, 72, 0.452) !important;
+	border: 0px solid transparent !important;
 }
