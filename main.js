@@ -1,8 +1,15 @@
-const input = document.getElementById('location').addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        getLocation();
-    }
-});
+function init(){
+    const input = document.getElementById('location')
+    input.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            getLocation();
+        }
+    })
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    init();
+})
 
 function getLocation() {
     let name = document.getElementById('location').value;
@@ -19,7 +26,9 @@ const getWeather = async function(arg){
         hydrateWeatherCard(data);
         setIcon(data);
     }else{
-        console.log("Server response with = " + response.status);
+        let error = response.status;
+        //createNotification(error);
+        alert("Not found this city in our database. The server response with : " + response.status);
     }
 };
 
@@ -70,3 +79,34 @@ function setIcon(data){
     }
 }
 
+class Toast{
+    constructor(error){ 
+        this.error = error;
+        this.print();
+    }
+    
+    print(){
+        const html = `
+        <div id="toast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false" style="position: absolute; right: 20px; top: 20px;">
+        <div class="toast-header">
+        <strong class="mr-auto">Warning !!</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="toast-body">
+            <p>
+            impossible to find the location. Check it and retry.
+            </p>
+        </div>
+        </div>
+        `
+        document.body.innerHTML += html;
+    }
+}
+
+function createNotification(error){
+    let toast = new Toast(error);
+    $('#toast').toast('show');
+    init();
+}
