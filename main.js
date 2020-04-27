@@ -22,13 +22,13 @@ const getWeather = async function(arg){
     let response = await fetch(url);
     if(response.ok){
         let data = await response.json();
-        //console.log(data);
         hydrateWeatherCard(data);
         setIcon(data);
     }else{
-        let error = response.status;
-        //createNotification(error);
-        alert("Not found this city in our database. The server response with : " + response.status);
+        let data = await response.json();
+        let cod = data.cod;
+        let message = data.message;
+        showNotification(cod, message);
     }
 };
 
@@ -79,15 +79,21 @@ function setIcon(data){
     }
 }
 
+const capitalize = ([first,...rest]) => first.toUpperCase() + rest.join('');
+
 class Toast{
-    constructor(error){ 
-        this.error = error;
-        this.print();
+    constructor(cod, message){ 
+        this.cod = cod;
+        this.message = capitalize(message);
+        this.createElement();
     }
     
-    print(){
-        const html = `
-        <div id="toast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false" style="position: absolute; right: 20px; top: 20px;">
+    createElement(){
+
+        let wrapper = document.createElement('div');
+
+        wrapper.innerHTML = `
+        <div id="toast" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="true" data-delay="3000" style="position: absolute; right: 20px; top: 20px;">
         <div class="toast-header">
         <strong class="mr-auto">Warning !!</strong>
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -96,17 +102,16 @@ class Toast{
         </div>
         <div class="toast-body">
             <p>
-            impossible to find the location. Check it and retry.
+            ${this.message}, server response with error code: ${this.cod}.
             </p>
         </div>
         </div>
-        `
-        document.body.innerHTML += html;
+        `;
+        document.body.appendChild(wrapper);
     }
 }
 
-function createNotification(error){
-    let toast = new Toast(error);
-    $('#toast').toast('show');
-    init();
+function showNotification(cod, message){
+    let toast = new Toast(cod, message);
+    $('#toast').toast('show'); // boostrap (+jQuery)
 }
