@@ -29,14 +29,23 @@ bg-translucent{
 	}
 }
 input, button{
-    background: rgba(255, 255, 255, 0.452) !important;
-    border: 0px solid transparent !important;
+    background: transparent !important;
+	border: 0px solid transparent !important;
 }
 input{
+	border-bottom: 2px solid rgba(255, 255, 255, 0.075) !important;
 	color: white !important;
 	font-weight: bold !important;
 }
+input::placeholder{
+	color: white !important;
+}
 input:focus, button:focus{
-    background: rgba(184, 72, 72, 0.452) !important;
+    background: rgba(255, 255, 255, 0.075) !important;
 	border: 0px solid transparent !important;
+	outline: 0 !important;
+	box-shadow: none !important;
+}
+.more-infos-icon{
+	font-size: 1.5em;
 }

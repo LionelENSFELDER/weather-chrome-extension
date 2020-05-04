@@ -22,6 +22,7 @@ const getWeather = async function(arg){
     let response = await fetch(url);
     if(response.ok){
         let data = await response.json();
+        console.log(data);
         hydrateWeatherCard(data);
         setIcon(data);
     }else{
@@ -34,12 +35,22 @@ const getWeather = async function(arg){
 
 
 function hydrateWeatherCard(data){
-    name = data.name + ", ";
-    country = data.sys.country;
-    temp = data.main.temp + "°";
+    let name = data.name + ", ";
+    let country = data.sys.country;
+    const regex = /(\w{2,})/g;
+    let tempArray = data.main.temp.toString().match(regex);
+    let temp = tempArray[0] + "°";
+    let humidity = data.main.humidity + " %";
+    let pressure = data.main.pressure + " Pa";
+    let wind = data.wind.speed + " m/s";
+    //
     document.getElementById("temp").textContent = temp;
     document.getElementById("name").textContent = name;
     document.getElementById("country").textContent = country;
+    document.getElementById("humidity-data").textContent = humidity;
+    document.getElementById("pressure-data").textContent = pressure;
+    document.getElementById("wind-data").textContent = wind;
+    //
     document.getElementById("weather-card").classList.remove("d-none");
 }
 

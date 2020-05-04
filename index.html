@@ -15,25 +15,52 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+                        <!-- input form -->
                         <div class="my-5 mx-auto input-group mb-3" style="max-width: 500px;">
                             <div class="input-group-prepend">
-                                <button id="refresh" class="form-control form-control-lg" onclick="getLocation();"><i class="fas fa-sync-alt"></i></button>
+                                <button id="refresh" class="form-control form-control-lg bg-transparent" onclick="getLocation();"><i class="fas fa-sync-alt"></i></button>
                             </div>
                             <input class="w-100 form-control form-control-lg" id="location" type="text" placeholder="Enter a location in English please"/>
                         </div>
                     </div>
                     <div class="col-12">
+                        <!-- weather card -->
                         <div id="weather-card" class="card border-0 bg-transparent text-white d-none mx-auto" style="max-width: 500px;">
                             <div class="card-body">
                                 <i id="icon" class="mr-5 display-1 wi"></i>
                                 <span id="temp" class="display-2"></span>
-                                <div class="row">
+
+                                <div class="">
                                     <span id="name" class="display-3 font-weight-bold">,</span> <span id="country" class="display-3"></span>
                                 </div>
+
+                                <div id="more-infos" class="row my-4">
+                                    <div class="card bg-transparent border-0 col">
+                                        <span id="humidity" class="align-middle">
+                                            <i id="humidity-icon" class="more-infos-icon mr-2 wi wi-humidity"></i>
+                                            <span id="humidity-data"></span>
+                                        </span>
+                                    </div>
+                                    <div class="card bg-transparent border-0 col">
+                                        <span id="pressure" class="align-middle">
+                                            <i id="pressure-icon" class="more-infos-icon mr-2 wi wi-barometer"></i>
+                                            <span id="pressure-data"></span>
+                                        </span>
+                                    </div>
+                                    <div class="card bg-transparent border-0 col">
+                                        <span id="wind" class="align-middle">
+                                            <i id="wind-icon" class="more-infos-icon mr-2 wi wi-small-craft-advisory"></i>
+                                            <span id="wind-data"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
+                <p>
             </div>
         </section>
         
