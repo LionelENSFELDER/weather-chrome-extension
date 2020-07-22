@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="src/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="src/css/weather-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="src/css/main.css" rel="stylesheet">
+        <title>Miiniimaal Weather</title>
+    </head>
+    <body>
+        <section class="vw-100 vh-100">
+            <div class="container vw-100">
+                <!-- weather card -->
+                <div class="d-flex flex-row justify-content-center">
+                    <div id="weather-card" class="card border-0 bg-transparent d-none">
+                        <div class="card-body">
+                            <!-- <div class="col-12">
+                                <button id="primary" type="button" class="btn btn-primary">Primary</button>
+                            </div> -->
+                            <div class="w-100 d-flex flex-row mb-5">
+                                <span id="name" class=""></span> 
+                                <span id="country" class=""></span>
+                            </div>
+                            <div class="w-100 d-flex flex-row justify-content-center mb-5">
+                                <i id="icon" class="mr-5 wi"></i>
+                                <span id="temp" class=""></span>
+                            </div>
+
+                            <div id="more-infos" class="col my-4">
+                                <div class="card bg-transparent border-0 row mb-3">
+                                    <span id="humidity" class="align-middle">
+                                        <i id="humidity-icon" class="more-infos-icon mr-2 wi wi-humidity"></i>
+                                        <span id="humidity-data"></span>
+                                    </span>
+                                </div>
+                                <div class="card bg-transparent border-0 row mb-3">
+                                    <span id="pressure" class="align-middle">
+                                        <i id="pressure-icon" class="more-infos-icon mr-2 wi wi-barometer"></i>
+                                        <span id="pressure-data"></span>
+                                    </span>
+                                </div>
+                                <div class="card bg-transparent border-0 row mb-3">
+                                    <span id="wind" class="align-middle">
+                                        <i id="wind-icon" class="more-infos-icon mr-2 wi wi-small-craft-advisory"></i>
+                                        <span id="wind-data"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script src="src/js/jquery.min.js"></script>
+        <script src="src/js/bootstrap.bundle.min.js"></script>
+        <script src="src/js/main.js"></script>
+    </body>
+</html>
