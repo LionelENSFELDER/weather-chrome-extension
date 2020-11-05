@@ -11,24 +11,54 @@
     </head>
     <body>
         <section class="vw-100 vh-100">
-            <div class="container vw-100">
+            <div class="vw-100">
                 <!-- weather card -->
                 <div class="d-flex flex-row justify-content-center">
-                    <div id="weather-card" class="card border-0 bg-transparent d-none">
-                        <div class="card-body">
+                    <div id="weather-card" class="card p-0 border-0 bg-transparent d-none">
+                        <div class="card-body p-0">
                             <!-- <div class="col-12">
                                 <button id="primary" type="button" class="btn btn-primary">Primary</button>
                             </div> -->
-                            <div class="w-100 d-flex flex-row mb-5">
-                                <span id="name" class=""></span> 
-                                <span id="country" class=""></span>
+                            <div class="w-100 d-flex flex-column justify-content-center mb-3">
+                                <div class="w-100 d-block">
+                                    <span id="name" class=""></span> 
+                                    <span id="country" class=""></span>
+                                </div>
+                                <div class="w-100 d-block">
+                                    <span id="now" class="w-100 d-block">Now</span>
+                                </div>
                             </div>
-                            <div class="w-100 d-flex flex-row justify-content-center mb-5">
-                                <i id="icon" class="mr-5 wi"></i>
+                            <div class="w-100 d-flex flex-row justify-content-center">
+                                <i id="icon" class="wi"></i>
                                 <span id="temp" class=""></span>
                             </div>
+                            <!-- <div class="w-100 d-flex flex-row justify-content-center">
+                                <span id="temp" class=""></span>
+                            </div> -->
+                            <div id="more-infos" class="col">
+                                <div class="row p-1 rounded bg-more-infos">
+                                    <div class="col p-0">
+                                        <div id="humidity" class="d-flex flex-row justify-content-center align-items-center">
+                                            <i id="humidity-icon" class="more-infos-icon mr-1 wi wi-humidity"></i>
+                                            <span id="humidity-data"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col p-0">
+                                        <div id="pressure" class="d-flex flex-row justify-content-center align-items-center">
+                                            <i id="pressure-icon" class="more-infos-icon mr-1 wi wi-barometer"></i>
+                                            <span id="pressure-data"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col p-0">
+                                        <div id="wind" class="d-flex flex-row justify-content-center align-items-center">
+                                            <i id="wind-icon" class="more-infos-icon mr-1 wi wi-small-craft-advisory"></i>
+                                            <span id="wind-data"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <div id="more-infos" class="col my-4">
+                            <!-- <div id="more-infos" class="col my-4">
                                 <div class="card bg-transparent border-0 row mb-3">
                                     <span id="humidity" class="align-middle">
                                         <i id="humidity-icon" class="more-infos-icon mr-2 wi wi-humidity"></i>
@@ -47,7 +77,7 @@
                                         <span id="wind-data"></span>
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
 
 
                         </div>

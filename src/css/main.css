@@ -1,19 +1,20 @@
 
 html, body {
-	color: #F4F4F6;
+	color: #E5ECF4;
+	/* color: #2D3639; */
 }
 html{
 	font-size: 1rem;
 }
 body{
-	width: 300px;
-	height:350px;
+	width: 280px;
+	height:270px;
 	overflow: hidden;
-	background-image: url("../../assets/img/Earth.gif");
+	/* background-image: url("../../assets/img/Earth.gif"); */
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	/* background-color: #222F35; */
+	background-color: #333B49;
 	/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
 	/* background-size: 400% 400%; */
 	/* animation: gradient 7s ease infinite; */
@@ -55,15 +56,28 @@ input:focus, button:focus{
 	outline: 0 !important;
 	box-shadow: none !important;
 }
+#humidity-data,
+#pressure-data,
+#wind-data,
 .more-infos-icon{
-	font-size: 1.5em;
+	font-size: 0.8rem;
+	font-weight: bold;
 }
-#temp,
-#icon{
-	font-size: 7rem;
+/* .more-infos-icon{
+	font-size: 1rem;
+} */
+.bg-more-infos{
+	background-color: #ffffff15;
+}
+#temp{
+	font-size: 6rem;
+	font-weight: 700;
 }
 #icon{
+	font-size: 4rem;
 	line-height: normal !important;
+	color: #FED766;
+	animation:breath 4s  linear infinite;
 }
 .switch {
 	position: relative;
@@ -124,3 +138,12 @@ input:focus, button:focus{
   .slider.round:before {
 	border-radius: 50%;
   }
+
+
+
+/* Animaton */
+@keyframes breath{
+	0%{transform: scale(1);}
+	50%{transform: scale(1.3);}
+	100%{transform: scale(1);}
+}

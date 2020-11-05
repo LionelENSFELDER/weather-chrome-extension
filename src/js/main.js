@@ -12,9 +12,9 @@ function hydrateWeatherCard(data){
     const regex = /(\w{2,})/g;
     let tempArray = data.main.temp.toString().match(regex);
     let temp = tempArray[0] + "°";
-    let humidity = "Humidity: " + data.main.humidity + " %";
-    let pressure = "Atmospheric pressure: " + data.main.pressure + " Pa";
-    let wind = "Wind speed: " + data.wind.speed + " m/s";
+    let humidity = data.main.humidity + " %";
+    let pressure = data.main.pressure + " Pa";
+    let wind = data.wind.speed + " m/s";
     //
     document.getElementById("temp").textContent = temp;
     document.getElementById("name").textContent = name;
