@@ -6,6 +6,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // })
 });
 
+function getUnsplashImage(conditions){
+    getImage = async function(){
+        let key = "MhLGdM8kBlRNqC_Kp9ywzQIgoHdcYC41hu3n2OphcBw";
+        let searchWord = conditions;
+        let url = "https://api.unsplash.com/search/photos?page=1&per_page=2&query=" + searchWord + "-weather&color=black&orientation=landscape&client_id=" + key;
+        console.log(url);
+        let response = await fetch(url);
+        if(response.ok){
+            let data = await response.json();
+            console.log(data);
+            let image = data.results[0].urls.full;
+            console.log("wallpaperUrl = " + image);
+            document.body.style.background = `url(${image})`;
+            document.body.style.backgroundSize = "cover";
+        }else{
+        }
+    }
+    getImage();
+
+}
+
+function setWallpaper(){
+
+}
+
 function hydrateWeatherCard(data){
     let name = data.name;
     let country = ", " + data.sys.country;
@@ -58,6 +83,7 @@ function setIcon(data){
         if(key == conditions){
             iconClass = conditionsArray[key];
             icon.classList.add(iconClass);
+            getUnsplashImage(conditions);
         }
     }
 }
@@ -113,7 +139,6 @@ function getPosition(){
             let lat = crd.latitude;
             let lon = crd.longitude;
             let url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&appid=f61845cc2a438aef2ac2289b15f69307";
-            console.log(url);
             let response = await fetch(url);
             if(response.ok){
                 let data = await response.json();

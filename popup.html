@@ -10,31 +10,26 @@
         <title>Miiniimaal Weather</title>
     </head>
     <body>
-        <section class="vw-100 vh-100">
+        <section class="vw-100 vh-100 pt-5">
             <div class="vw-100">
                 <!-- weather card -->
                 <div class="d-flex flex-row justify-content-center">
+                    <!-- todo: add d-none class to weather-card ! -->
                     <div id="weather-card" class="card p-0 border-0 bg-transparent d-none">
-                        <div class="card-body p-0">
-                            <!-- <div class="col-12">
-                                <button id="primary" type="button" class="btn btn-primary">Primary</button>
-                            </div> -->
+                        <div class="card-body p-0 text-white">
                             <div class="w-100 d-flex flex-column justify-content-center mb-3">
-                                <div class="w-100 d-block">
+                                <div class="mx-auto d-block">
                                     <span id="name" class=""></span> 
                                     <span id="country" class=""></span>
                                 </div>
-                                <div class="w-100 d-block">
-                                    <span id="now" class="w-100 d-block">Now</span>
+                                <div class="mx-auto d-block mb-5">
+                                    <span id="now" class="w-100 d-block mx-auto">Now</span>
                                 </div>
                             </div>
                             <div class="w-100 d-flex flex-row justify-content-center">
                                 <i id="icon" class="wi"></i>
                                 <span id="temp" class=""></span>
                             </div>
-                            <!-- <div class="w-100 d-flex flex-row justify-content-center">
-                                <span id="temp" class=""></span>
-                            </div> -->
                             <div id="more-infos" class="col">
                                 <div class="row p-1 rounded bg-more-infos">
                                     <div class="col p-0">
@@ -57,29 +52,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <div id="more-infos" class="col my-4">
-                                <div class="card bg-transparent border-0 row mb-3">
-                                    <span id="humidity" class="align-middle">
-                                        <i id="humidity-icon" class="more-infos-icon mr-2 wi wi-humidity"></i>
-                                        <span id="humidity-data"></span>
-                                    </span>
-                                </div>
-                                <div class="card bg-transparent border-0 row mb-3">
-                                    <span id="pressure" class="align-middle">
-                                        <i id="pressure-icon" class="more-infos-icon mr-2 wi wi-barometer"></i>
-                                        <span id="pressure-data"></span>
-                                    </span>
-                                </div>
-                                <div class="card bg-transparent border-0 row mb-3">
-                                    <span id="wind" class="align-middle">
-                                        <i id="wind-icon" class="more-infos-icon mr-2 wi wi-small-craft-advisory"></i>
-                                        <span id="wind-data"></span>
-                                    </span>
-                                </div>
-                            </div> -->
-
-
                         </div>
                     </div>
                 </div>
